@@ -1,0 +1,13 @@
+float64 xmin_LiDAR_px
+float64 xmax_LiDAR_px
+float64 ymin_LiDAR_px
+float64 ymax_LiDAR_px
+float64 xcenter
+float64 ycenter
+float64 zcenter
+float64 xmin
+float64 xmax
+float64 ymin
+float64 ymax
+float64 zmin
+float64 zmax

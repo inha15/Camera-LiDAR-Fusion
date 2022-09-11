@@ -1,0 +1,75 @@
+<launch>
+
+  <node pkg="Sensor_fusion" type="Data_RCVD" name="Data_RCVD_node" output="screen" >
+  <!--패키지 명, type => excutable file, cpp파일에 ROI_node로 되어있음-->
+  <!--FUSION param-->
+  	<!--BBox print-->
+	  <param name="switch_LiDAR_BB" 		value="true"/>
+	  <param name="switch_Camera_BB" 		value="true"/>
+	  <param name="switch_Fusion_BB" 		value="true"/>
+	  
+	<!--fusion base check-->
+	  <param name="camera_base_fusion" 		value="true"/>
+	  <param name="LiDAR_base_fusion" 		value="false"/>
+	  
+	<!--fusion BBox making method-->
+	  <param name="FBB_maked_CameraLiDARcenter"	value="true"/>
+	  <param name="FBB_maked_Cameracenter" 	value="false"/>
+	  
+	<!--fusion IOU param-->
+	  <param name="IOU_limit" 			value="0.1"/>
+	  
+	<!--fusion pub param-->
+	  <param name="fusionMSG_pub" 		value="true"/>
+	  <param name="onlyLiDARMSG_pub" 		value="true"/>
+	  <param name="onlyCameraMSG_pub" 		value="true"/>
+	  <param name="tffMSG_pub" 			value="true"/>
+  	  <param name="switch_only_LiDAR_BB" 		value="true"/>
+	  <param name="switch_only_Camera_BB" 	value="true"/>
+	  
+  <!--Calibration parameter-->
+  
+  <!--px, py-->
+  <!--941.601, 500.747 for tiny profile-->
+  <!--1020, 600 for new ERP-->
+	  <param name="intri_fx" value="1400.551"/>  <!-- fx : focus x -->
+	  <param name="intri_fy" value="1400.681"/>  <!-- fy : focus y -->
+	  <param name="intri_cx" value="1020"/>      <!-- cx : pixel frame origin x -->	  
+	  <param name="intri_cy" value="600"/>       <!-- cy : pixel frame origin y -->
+	  <param name="intri_skew" value="0"/>         <!-- skew : -->
+
+	  <param name="trans_x" value="0.55"/>
+	  <param name="trans_y" value="0"/>
+	  <param name="trans_z" value="-0.8"/>
+
+	  <param name="rot_angle_x" value="90"/>
+	  <param name="rot_angle_y" value="-90"/>
+	  <param name="rot_angle_z" value="0"/>
+	
+	<!--
+	    
+
+	  <param name="extri_00" value="0"/>
+	  <param name="extri_01" value="-1"/>
+	  <param name="extri_02" value="0"/>
+	  <param name="extri_03" value="0"/>
+	    
+	  <param name="extri_10" value="0"/>
+	  <param name="extri_11" value="0"/>
+	  <param name="extri_12" value="-1"/>
+	  <param name="extri_13" value="0.45"/>
+	    
+	  <param name="extri_20" value="1"/>
+	  <param name="extri_21" value="0"/>
+	  <param name="extri_22" value="0"/>
+	  <param name="extri_23" value="0.55"/>
+	    
+	  <param name="extri_30" value="0"/>
+	  <param name="extri_31" value="0"/>
+	  <param name="extri_32" value="0"/>
+	  <param name="extri_33" value="1"/>
+    -->
+  </node>
+
+
+</launch>
